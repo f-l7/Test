@@ -1,82 +1,319 @@
-/* الأساسيات */
+/* الألوان الأساسية */
 :root {
-    --primary-color: #1e88e5;
-    --dark-blue: #0d1a3b; /* تم تغيير اللون الأزرق إلى غامق */
-    --darker-blue: #09152e; /* لون أغمق */
-    --light-blue: #bbdefb;
+    --dark-blue: #0d1a3b;
+    --darker-blue: #09152e;
+    --blue-accent: #1a3a8f;
+    --light-blue: #4a6bb5;
     --white: #ffffff;
-    --gray: #f5f5f5;
-    --dark-gray: #333333;
+    --light-gray: #f0f0f0;
+    --border-color: #1a3a8f;
 }
 
-/* إضافة ثيم الخلفية الغامقة */
-body.dark-blue-theme {
+/* الأساسيات */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
     background-color: var(--dark-blue);
     color: var(--white);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* تعديل الهيدر للثيم الداكن */
-.dark-blue-theme header {
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* رأس الصفحة */
+.admin-header {
     background-color: var(--darker-blue);
-    border-bottom: 1px solid var(--primary-color);
+    padding: 10px 0;
+    text-align: left;
+    border-bottom: 1px solid var(--blue-accent);
 }
 
-/* تعديل التنقل للثيم الداكن */
-.dark-blue-theme nav {
-    background-color: var(--darker-blue);
-}
-
-.dark-blue-theme nav ul li a {
+.admin-login {
     color: var(--white);
+    text-decoration: none;
+    padding: 5px 15px;
+    background-color: var(--blue-accent);
+    border-radius: 4px;
+    font-size: 14px;
+    margin-right: 20px;
+    transition: background-color 0.3s;
 }
 
-.dark-blue-theme nav ul li a:hover {
-    background-color: var(--primary-color);
+.admin-login:hover {
+    background-color: var(--light-blue);
 }
 
-/* تعديل المحتوى الرئيسي للثيم الداكن */
-.dark-blue-theme main {
-    background-color: var(--dark-blue);
-    color: var(--white);
-}
-
-.dark-blue-theme .about {
-    background-color: rgba(13, 26, 59, 0.7);
-    border: 1px solid var(--primary-color);
-}
-
-.dark-blue-theme h1, 
-.dark-blue-theme h2, 
-.dark-blue-theme h3 {
-    color: var(--white);
-}
-
-/* تعديل الفوتر للثيم الداكن */
-.dark-blue-theme footer {
+.main-header {
     background-color: var(--darker-blue);
     color: var(--white);
-    border-top: 1px solid var(--primary-color);
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--blue-accent);
 }
 
-/* تعديل الأزرار للثيم الداكن */
-.dark-blue-theme .admin-login,
-.dark-blue-theme .add-product-btn,
-.dark-blue-theme #logoutBtn {
-    background-color: var(--primary-color);
+.main-header h1 {
+    font-size: 2.2rem;
+}
+
+/* التنقل */
+nav {
+    background-color: var(--darker-blue);
+    border-bottom: 1px solid var(--blue-accent);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
     color: var(--white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: color 0.3s;
 }
 
-.dark-blue-theme .admin-login:hover,
-.dark-blue-theme .add-product-btn:hover,
-.dark-blue-theme #logoutBtn:hover {
-    background-color: #1565c0;
-}
-
-/* تعديل الروابط للثيم الداكن */
-.dark-blue-theme a {
+nav ul li a:hover {
     color: var(--light-blue);
 }
 
-.dark-blue-theme a:hover {
+/* المحتوى الرئيسي */
+main {
+    flex: 1;
+    padding: 30px 0;
+}
+
+.welcome-section {
+    background-color: rgba(13, 26, 59, 0.7);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--blue-accent);
+    margin-top: 20px;
+}
+
+.welcome-section h2 {
     color: var(--white);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.welcome-section p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+/* صفحة المنتجات */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.product-card {
+    background-color: rgba(13, 26, 59, 0.7);
+    border: 1px solid var(--blue-accent);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    color: var(--white);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.product-price {
+    font-weight: bold;
+    color: var(--light-blue);
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+.order-btn {
+    display: inline-block;
+    background-color: var(--blue-accent);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.order-btn:hover {
+    background-color: var(--light-blue);
+}
+
+/* صفحة تسجيل الدخول */
+.admin-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--dark-blue);
+}
+
+.login-container {
+    background-color: var(--darker-blue);
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--blue-accent);
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-container h1 {
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* نماذج */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--white);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--blue-accent);
+    border-radius: 5px;
+    color: var(--white);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--blue-accent);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--light-blue);
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.payment-options label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+}
+
+/* لوحة التحكم */
+.admin-panel {
+    background-color: var(--dark-blue);
+}
+
+.admin-panel-header {
+    background-color: var(--darker-blue);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--blue-accent);
+}
+
+.admin-panel-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-to-products,
+.logout-btn {
+    color: var(--white);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-to-products {
+    background-color: var(--blue-accent);
+}
+
+.logout-btn {
+    background-color: #6c1d1d;
+}
+
+.back-to-products:hover {
+    background-color: var(--light-blue);
+}
+
+.logout-btn:hover {
+    background-color: #8a2525;
+}
+
+/* الفوتر */
+footer {
+    background-color: var(--darker-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--blue-accent);
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
 }
