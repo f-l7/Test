@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إضافة منتج جديد</title>
+    <title>إضافة منتج - TechnoBox</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="admin-panel">
+<body>
     <header class="admin-panel-header">
         <div class="container">
-            <a href="products.html" class="back-to-products">العودة إلى المنتجات</a>
-            <a href="#" id="logoutBtn" class="logout-btn">تسجيل الخروج</a>
-            <h1>إضافة منتج جديد</h1>
+            <a href="products.html" class="back-btn">العودة للمنتجات</a>
+            <h1><i class="fas fa-plus-circle"></i> إضافة منتج جديد</h1>
         </div>
     </header>
 
@@ -31,15 +30,7 @@
             </div>
             <div class="form-group">
                 <label for="productPrice">سعر المنتج:</label>
-                <input type="number" id="productPrice" step="0.01" required>
-            </div>
-            <div class="form-group">
-                <label>طرق الدفع المتاحة:</label>
-                <div class="payment-options">
-                    <label><input type="checkbox" name="payment" value="paypal" checked> باي بال</label>
-                    <label><input type="checkbox" name="payment" value="rajhi" checked> الراجحي</label>
-                    <label><input type="checkbox" name="payment" value="credit" checked> بطاقة ائتمان</label>
-                </div>
+                <input type="number" id="productPrice" required>
             </div>
             <button type="submit">إضافة المنتج</button>
         </form>
