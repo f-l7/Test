@@ -3,42 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منتجاتنا - متجرنا الإلكتروني</title>
+    <title>المنتجات - TechnoBox</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- نفس نافذة الدفع من index.html -->
+    
     <div class="admin-header">
-        <a href="admin.html" class="admin-login">تسجيل دخول المسؤولين</a>
+        <a href="admin.html" class="admin-login"><i class="fas fa-user-cog"></i> تسجيل دخول</a>
     </div>
 
     <header class="main-header">
         <div class="container">
-            <h1>متجرنا الإلكتروني</h1>
+            <h1><i class="fas fa-box"></i> TechnoBox</h1>
         </div>
     </header>
 
     <nav>
         <div class="container">
             <ul>
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="products.html">المنتجات</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li><a href="products.html"><i class="fas fa-shopping-bag"></i> المنتجات</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="container">
-        <h2>منتجاتنا</h2>
-        <div class="products-grid" id="productsContainer">
-            <!-- سيتم عرض المنتجات هنا -->
+        <h2><i class="fas fa-boxes"></i> منتجاتنا</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300" alt="منتج تقني">
+                <h3>جهاز لوحي</h3>
+                <p>وصف المنتج هنا</p>
+                <p class="price">500 ر.س</p>
+                <button class="buy-btn" onclick="openPaymentModal()">
+                    <i class="fas fa-shopping-cart"></i> شراء المنتج
+                </button>
+            </div>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>جميع الحقوق محفوظة &copy; 2023</p>
+            <div class="footer-content">
+                <p><i class="far fa-copyright"></i> 2023 جميع الحقوق محفوظة لـ TechnoBox</p>
+            </div>
         </div>
     </footer>
 
-    <script src="js/products.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
