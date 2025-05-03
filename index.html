@@ -3,39 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجرنا الإلكتروني</title>
+    <title>TechnoBox - متجرنا الإلكتروني</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- نافذة الدفع -->
+    <div id="paymentModal" class="payment-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="paymentContent"></div>
+        </div>
+    </div>
+
     <div class="admin-header">
-        <a href="admin.html" class="admin-login">تسجيل دخول المسؤولين</a>
+        <a href="admin.html" class="admin-login"><i class="fas fa-user-cog"></i> تسجيل دخول</a>
     </div>
 
     <header class="main-header">
         <div class="container">
-            <h1>متجرنا الإلكتروني</h1>
+            <h1><i class="fas fa-box"></i> TechnoBox</h1>
         </div>
     </header>
 
     <nav>
         <div class="container">
             <ul>
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="products.html">المنتجات</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li><a href="products.html"><i class="fas fa-shopping-bag"></i> المنتجات</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="container">
         <section class="welcome-section">
-            <h2>مرحباً بكم في متجرنا</h2>
-            <p>متجرنا يقدم أفضل المنتجات بأسعار تنافسية وجودة عالية.</p>
+            <h2>مرحباً بكم في TechnoBox</h2>
+            <p>متجرنا يقدم أفضل المنتجات التقنية بأسعار تنافسية وجودة عالية.</p>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>جميع الحقوق محفوظة &copy; 2023</p>
+            <div class="footer-content">
+                <p><i class="far fa-copyright"></i> 2023 جميع الحقوق محفوظة لـ TechnoBox</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
 
