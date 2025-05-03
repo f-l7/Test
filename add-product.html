@@ -6,17 +6,16 @@
     <title>إضافة منتج جديد</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header>
+<body class="admin-panel">
+    <header class="admin-panel-header">
         <div class="container">
-            <button class="add-product-btn">تسجيل منتج جديد</button>
-            <button id="logoutBtn">تسجيل الخروج</button>
-            <h1>لوحة التحكم</h1>
+            <a href="products.html" class="back-to-products">العودة إلى المنتجات</a>
+            <a href="#" id="logoutBtn" class="logout-btn">تسجيل الخروج</a>
+            <h1>إضافة منتج جديد</h1>
         </div>
     </header>
 
     <main class="container">
-        <h2>إضافة منتج جديد</h2>
         <form id="addProductForm">
             <div class="form-group">
                 <label for="productName">اسم المنتج:</label>
@@ -35,7 +34,7 @@
                 <input type="number" id="productPrice" step="0.01" required>
             </div>
             <div class="form-group">
-                <label>طريقة الدفع:</label>
+                <label>طرق الدفع المتاحة:</label>
                 <div class="payment-options">
                     <label><input type="checkbox" name="payment" value="paypal"> باي بال</label>
                     <label><input type="checkbox" name="payment" value="rajhi"> الراجحي</label>
