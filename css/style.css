@@ -1,39 +1,144 @@
-/* الألوان الأساسية */
 :root {
     --dark-blue: #0d1a3b;
     --darker-blue: #09152e;
     --blue-accent: #1a3a8f;
     --light-blue: #4a6bb5;
     --white: #ffffff;
+    --light-gray: #f0f0f0;
     --error-red: #ff4444;
     --success-green: #00C851;
 }
 
-/* صفحة تسجيل الدخول */
-.admin-page {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
     background-color: var(--dark-blue);
     color: var(--white);
+    line-height: 1.6;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
+}
+
+.admin-header {
+    background-color: var(--darker-blue);
+    padding: 10px 0;
+    text-align: left;
+    border-bottom: 1px solid var(--blue-accent);
+}
+
+.admin-login {
+    color: var(--white);
+    text-decoration: none;
+    padding: 5px 15px;
+    background-color: var(--blue-accent);
+    border-radius: 4px;
+    font-size: 14px;
+    margin-right: 20px;
+    transition: background-color 0.3s;
+}
+
+.main-header {
+    background-color: var(--darker-blue);
+    color: var(--white);
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--blue-accent);
+}
+
+nav {
+    background-color: var(--darker-blue);
+    border-bottom: 1px solid var(--blue-accent);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.welcome-section {
+    background-color: rgba(13, 26, 59, 0.7);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--blue-accent);
+    margin-top: 20px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.product-card {
+    background-color: rgba(13, 26, 59, 0.7);
+    border: 1px solid var(--blue-accent);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-price {
+    font-weight: bold;
+    color: var(--light-blue);
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+.order-btn {
+    display: inline-block;
+    background-color: var(--blue-accent);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 .login-container {
     background-color: var(--darker-blue);
-    padding: 30px;
+    padding: 40px;
     border-radius: 8px;
+    border: 1px solid var(--blue-accent);
     width: 100%;
     max-width: 500px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--blue-accent);
-}
-
-.login-container h1 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: var(--white);
 }
 
 .form-group {
@@ -46,14 +151,14 @@
     color: var(--white);
 }
 
-.form-group input {
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 12px;
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid var(--blue-accent);
     border-radius: 5px;
     color: var(--white);
-    font-size: 16px;
 }
 
 button[type="submit"] {
@@ -64,37 +169,18 @@ button[type="submit"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
     transition: background-color 0.3s;
-    margin-top: 10px;
 }
 
-button[type="submit"]:hover {
-    background-color: var(--light-blue);
-}
-
-.message {
-    margin-top: 20px;
-    padding: 12px;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: bold;
-}
-
-/* لوحة التحكم */
 .admin-panel-header {
     background-color: var(--darker-blue);
     padding: 15px 0;
     border-bottom: 1px solid var(--blue-accent);
 }
 
-.admin-panel-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.back-to-products, .logout-btn {
+.back-to-products,
+.logout-btn {
     color: var(--white);
     text-decoration: none;
     padding: 8px 15px;
@@ -103,45 +189,11 @@ button[type="submit"]:hover {
     font-size: 14px;
 }
 
-.back-to-products {
-    background-color: var(--blue-accent);
-}
-
-.logout-btn {
-    background-color: #6c1d1d;
-}
-
-.back-to-products:hover {
-    background-color: var(--light-blue);
-}
-
-.logout-btn:hover {
-    background-color: #8a2525;
-}
-
-/* نماذج إضافة المنتجات */
-#addProductForm {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(13, 26, 59, 0.7);
-    border-radius: 8px;
-    border: 1px solid var(--blue-accent);
-}
-
-#addProductForm .form-group textarea {
-    min-height: 120px;
-}
-
-.payment-options {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
-}
-
-.payment-options label {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
+footer {
+    background-color: var(--darker-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--blue-accent);
+    margin-top: 30px;
 }
